@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class bullet : MonoBehaviour
+public class PauseGameDeath : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,17 +15,18 @@ public class bullet : MonoBehaviour
     {
         
     }
-    
+
+    void PauseGame()
+    {
+        Time.timeScale = 0f;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "bulletDestroyer")
+        if (other.tag == "enemy")
         {
-            Destroy(this.gameObject);
-        }
-        if ( other.tag == "enemy")
-        {
-            other.GetComponent <enemy> ().Kill();
-            Destroy(this.gameObject);
+            PauseGame();
+            Debug.Log("Detect");
         }
     }
 }

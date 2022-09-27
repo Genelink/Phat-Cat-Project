@@ -16,7 +16,7 @@ public class ShootGun : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown("space"))
         {
             GameObject b = Instantiate(bullet, firePoint.transform.position, Quaternion.identity);
             b.GetComponent<Rigidbody2D>().velocity = new Vector2(bulletSpeed, 0);
