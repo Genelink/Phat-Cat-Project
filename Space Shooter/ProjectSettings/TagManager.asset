@@ -6,11 +6,13 @@ TagManager:
   tags:
   - bulletDestroyer
   - enemy
+  - SpaceBkg
+  - Rock
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Background
   - Water
   - UI
   - 
@@ -40,6 +42,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Background
+    uniqueID: 3200793929
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0

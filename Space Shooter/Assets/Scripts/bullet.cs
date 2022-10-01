@@ -27,5 +27,9 @@ public class bullet : MonoBehaviour
             other.GetComponent <enemy> ().Kill();
             Destroy(this.gameObject);
         }
+        if (other.tag == "Rock")
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
