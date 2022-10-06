@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class bullet : MonoBehaviour
 {
+    public GameObject Player;
     // Start is called before the first frame update
     void Start()
     {
@@ -25,6 +26,8 @@ public class bullet : MonoBehaviour
         if ( other.tag == "enemy")
         {
             other.GetComponent <enemy> ().Kill();
+            Player.GetComponent<Score>().CurrentScore += 10;
+            
             Destroy(this.gameObject);
         }
         if (other.tag == "Rock")

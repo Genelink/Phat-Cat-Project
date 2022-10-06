@@ -24,6 +24,8 @@ public class BkgSpawn : MonoBehaviour
             ExitTrue = false;
             ExecuteAfterTime(2);
         }
+
+        
     }
 
     void OnTriggerExit2D(Collider2D other)
@@ -34,7 +36,7 @@ public class BkgSpawn : MonoBehaviour
     }
 
     IEnumerator ExecuteAfterTime(float time)
- {
+    {
      if (isCoroutineExecuting)
          yield break;
  
@@ -45,5 +47,5 @@ public class BkgSpawn : MonoBehaviour
      // Code to execute after the delay
  
      isCoroutineExecuting = false;
- }
+    }
 }
