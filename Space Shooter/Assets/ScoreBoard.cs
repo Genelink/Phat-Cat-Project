@@ -11,13 +11,14 @@ public class ScoreBoard : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CurScore = Player.GetComponent<Score>().CurrentScore;
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        StrCurScore = "Score [" + CurScore.ToString();
+        CurScore = Player.GetComponent<Score>().CurrentScore;
+        StrCurScore = "Score: " + CurScore.ToString();
         GetComponent<TextMeshProUGUI>().text = StrCurScore;
     }
 }

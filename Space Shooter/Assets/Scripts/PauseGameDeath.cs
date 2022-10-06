@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PauseGameDeath : MonoBehaviour
 {
+    public GameObject LevelLoader;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,7 +19,9 @@ public class PauseGameDeath : MonoBehaviour
 
     void PauseGame()
     {
-        Time.timeScale = 0f;
+        LevelLoader.GetComponent<Levelloader>().LoadGameOver();
+        //Time.timeScale = 0f;
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -26,7 +29,13 @@ public class PauseGameDeath : MonoBehaviour
         if (other.tag == "enemy")
         {
             PauseGame();
-            Debug.Log("Detect");
+            //Debug.Log("Detect");
+        }
+
+        if (other.tag == "Rock")
+        {
+            PauseGame();
+            //Debug.Log("Detect");
         }
     }
 }
